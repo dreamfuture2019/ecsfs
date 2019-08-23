@@ -1,17 +1,6 @@
-{
-  [
-      {
-        "name": "ecsfs-backend-container",
-        "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",
-        "cpu": 0,
-        "portMappings": [
-          {
-            "protocol": "tcp",
-            "containerPort": 5000,
-            "hostPort": 5000
-          }
-        ],
-        "essential": true
-      }
-    ]
-}
+[
+  {
+    "name": "ecsfs-backend-container",
+    "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest"
+  }
+]
