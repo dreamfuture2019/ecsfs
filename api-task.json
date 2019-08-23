@@ -1,17 +1,21 @@
 {
   "taskDefinition": {
     "family": "task-api-ecsfs-definition",
-    "containerDefinitions": [{
-      "name": "ecsfs-backend-container",
-      "essential": true,
-      "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",   
-      "portMappings": [
-        {
-          "protocol": "tcp",
-          "containerPort": 5000,
-          "hostPort": 5000
-        }
-      ]
-    }]
+    "containerDefinitions": [
+      {
+        "name": "ecsfs-backend-container",
+        "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",
+        "cpu": 0,
+        "portMappings": [
+          {
+            "protocol": "tcp",
+            "containerPort": 5000,
+            "hostPort": 5000
+          }
+        ],
+        "memory": null,
+        "essential": true
+      }
+    ]
   }
 }
