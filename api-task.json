@@ -1,7 +1,5 @@
 {
-  "taskDefinition": {
-    "family": "task-api-ecsfs-definition",
-    "containerDefinitions": [
+  [
       {
         "name": "ecsfs-backend-container",
         "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",
@@ -13,9 +11,7 @@
             "hostPort": 5000
           }
         ],
-        "memory": null,
         "essential": true
       }
     ]
-  }
 }
