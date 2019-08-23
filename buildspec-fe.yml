@@ -1,0 +1,30 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 9
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --no-include-email)
+      - REPOSITORY_URI=979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_frontend
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      #- docker build -t $REPOSITORY_URI:latest .
+      - cd frontend
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Writing definitions file...
+artifacts:
+    files: frontend-task.json
