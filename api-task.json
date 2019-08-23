@@ -3,7 +3,7 @@
   "containerDefinitions": [{
     "name": "ecsfs-backend-container",
     "essential": true,
-    "image": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",   
+    "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend:latest",   
     "portMappings": [
       {
         "protocol": "tcp",
