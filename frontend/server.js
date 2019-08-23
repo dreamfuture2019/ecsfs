@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   // The backend should greet us with "Hello from the backend."
   request('http://ecsfs-backend.local:5000', (err, response, body) => {
     // We send both greetings together on a GET request to /
-    res.send(message + " " + body);
+    res.send(message + " " + body + " " + err + " " + response);
   })
 })
 
