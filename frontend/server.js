@@ -10,8 +10,9 @@ app.get('/', (req, res) => {
   const message = "Hello from the frontend..."
 
   // The backend should greet us with "Hello from the backend."
-  request('http://ecsfs-backend.local:5000', (err, response, body) => {
+  request('http://ecsfs-backend-service.ecsfs:5000', (err, response, body) => {
     // We send both greetings together on a GET request to /
+    console.log(JSON.stringify(req));
     res.send(message + " " + body + " " + err + " " + response);
   })
 })
