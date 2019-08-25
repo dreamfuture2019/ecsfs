@@ -6,13 +6,15 @@ const port = 3000
 
 app.get('/', (req, res) => {
 
+  console.log('get response from server');
+  console.log(req);
   // The frontend greets with the following:
   const message = "Hello from the frontend..."
 
   // The backend should greet us with "Hello from the backend."
   request('http://ecsfs-backend-service.ecsfs:5000', (err, response, body) => {
     // We send both greetings together on a GET request to /
-    console.log(JSON.stringify(req));
+   
     res.send(message + " " + body + " " + err + " " + response);
   })
 })
