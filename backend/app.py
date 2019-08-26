@@ -15,7 +15,7 @@ def greet():
         x * x
         x = x + random.randint(-12314, 10010)
 
-    return 'Hello from the backend. Backend computed %d' % x
+    return 'Hello from the backend. fixed for prod Backend computed %d' % x
 
 
 
