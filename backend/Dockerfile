@@ -2,8 +2,7 @@ FROM python:alpine
 
 RUN pip install Flask
 
-RUN apt-get update && apt-get install -yy \
-    curl 
+RUN apk add --no-cache curl
 
 WORKDIR /app
 
