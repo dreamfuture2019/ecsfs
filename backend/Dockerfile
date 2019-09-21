@@ -12,6 +12,6 @@ COPY entrypoint.sh /usr/local/bin/
 
 ENV FLASK_APP app.py
 
-ENTRYPOINT ["entrypoint.sh"]
+CMD entrypoint.sh
 
 CMD flask run --host=0.0.0.0
