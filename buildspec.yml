@@ -8,7 +8,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email)
-      - REPOSITORY_URI=979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_backend
+      - REPOSITORY_URI=741733132160.dkr.ecr.us-east-1.amazonaws.com/ecsfs_backend
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
