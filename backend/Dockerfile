@@ -2,6 +2,8 @@ FROM python:alpine
 
 RUN pip install Flask
 
+VOLUME /var/lib/docker
+
 RUN apk add --no-cache curl
 
 WORKDIR /app
