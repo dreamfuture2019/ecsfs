@@ -16,7 +16,12 @@ app.get('/', (req, res) => {
     // We send both greetings together on a GET request to /
    
     res.send(message + " " + body + " " + err + " " + response);
-  })
+  });
 })
+
+app.get('/health-check', (req, res) => {
+   
+    res.send("OK");
+});
 
 app.listen(port, () => console.log(`Fontend app listening on port ${port}.`))
