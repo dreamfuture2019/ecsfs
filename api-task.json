@@ -1,6 +1,6 @@
 [
   {
-    "name": "ecsfs-backend",
+    "name": "ecsfs-be-container",
     "imageUri": "741733132160.dkr.ecr.us-east-1.amazonaws.com/ecsfs_backend"
   }
 ]
