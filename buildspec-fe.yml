@@ -7,8 +7,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - $(aws ecr get-login --no-include-email)
-      - REPOSITORY_URI=979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_frontend
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 741733132160.dkr.ecr.us-east-1.amazonaws.com
+      - REPOSITORY_URI=741733132160.dkr.ecr.us-east-1.amazonaws.com/ecsfs_frontend
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -26,6 +26,6 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing definitions file...
-      - printf '[{"name":"ecsfs-frontend-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > frontend-task.json
+      - printf '[{"name":"ecsfs-fe-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > frontend-task.json
 artifacts:
     files: frontend-task.json
