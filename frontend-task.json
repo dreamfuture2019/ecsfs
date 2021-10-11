@@ -1,6 +1,6 @@
 [
   {
-    "name": "ecsfs-frontend-container",
-    "imageUri": "979000974791.dkr.ecr.us-east-2.amazonaws.com/ecsfs_frontend:latest"
+    "name": "ecsfs-fe-container",
+    "imageUri": "741733132160.dkr.ecr.us-east-1.amazonaws.com/ecsfs_frontend:latest"
   }
 ]
